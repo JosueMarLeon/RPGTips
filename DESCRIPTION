@@ -1,10 +1,10 @@
 Package: RPGTips
-Type: Package
-Title: Compilation of utility functions to play RPGs
-Version: 0.1.0
-Author: RPG Tips
-Maintainer: RPG Tips 
-Description: Functions to automatize rolling on the Mythic Game Master Emulator and Ironsworn.
+Title: RPG helper functions to play solo
+Version: 0.1
+Authors@R: person("RPG", "Tips", email = "not.yet@example.com",
+                  role = c("aut", "cre"))
+Description: Mechanics and functions from lots of places, check the README in the repo.
+Depends: R (>= 3.1.0)
 License: MIT
-Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1

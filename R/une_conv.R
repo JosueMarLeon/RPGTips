@@ -1,3 +1,8 @@
+#' Generate conversation mood from an NPC using the Universal NPC Emulator.
+#'
+#' @param relationship The relationship between the PC and the NPC. One of "loved", "friendly", "peaceful", "neutral" (default), "distrustful", "hostile", "hated".
+#' @return The mood of the NPC, chosen between "withdrawn", "guarded", "cautious", "neutral", "sociable", "helpful" or "forthcoming".
+
 une_conv_mood <- function(relationship = "neutral"){
   df <- data.frame("loved" = c(1, 6, 16, 31, 70, 85, 100),
                    "friendly" = c(2, 8, 20, 40, 76, 89, 100),
@@ -13,6 +18,11 @@ une_conv_mood <- function(relationship = "neutral"){
   return(moods[which(df[,col]  >= roll)[1]])
 }
 
+#' Generate the bearing in the conversation of an NPC using the Universal NPC Emulator.
+#'
+#' @param demeanor One of "scheming", "insane", "friendly", "hostile", "inquisitive", "mysterious", "prejudiced" or a number between 1 and 8.
+#' @return A word signaling the bearing of the NPC.
+
 une_conv_bearing <- function(demeanor = sample(1:8, 1)){
   bearings <- data.frame(scheming = c("intent", "bargain", "means",
                                       "proposition", "plan",
@@ -21,7 +31,7 @@ une_conv_bearing <- function(demeanor = sample(1:8, 1)){
                                       "plot"),
                          insane = c("madness", "fear", "accident",
                                     "chaos", "idiocy", "illusion",
-                                    "turmoil", "confusion", "façade",
+                                    "turmoil", "confusion", "facade",
                                     "bewilderment"),
                          friendly = c("alliance", "comfort",
                                       "gratitude", "shelter",
@@ -63,6 +73,10 @@ une_conv_bearing <- function(demeanor = sample(1:8, 1)){
   }
 }
 
+#' Generate the focus of the conversation of an NPC using the Universal NPC Emulator.
+#'
+#' @return A random word with the focus.
+
 une_conv_focus <- function(){
   focus <- c("current scene","last story", "equipment",
              "parents","history","retainers","wealth",
@@ -75,9 +89,15 @@ une_conv_focus <- function(){
   sample(focus, 1)
 }
 
+#' Generate the complete conversation of an NPC using the Universal NPC Emulator.
+#'
+#' @param relationship The relationship between the PC and the NPC. One of "loved", "friendly", "peaceful", "neutral" (default), "distrustful", "hostile", "hated".
+#' @param demeanor One of "scheming", "insane", "friendly", "hostile", "inquisitive", "mysterious", "prejudiced" or a number between 1 and 8. Random by default.
+#' @return The mood, bearing and focus of the conversation.
+
 une_conv <- function(relationship = "neutral",
                      demeanor = sample(1:8,1)){
-print(paste("Mood:", une_conv_mood(relationship)))
-print(paste("Bearing:", une_conv_bearing(demeanor)))
-print(paste("Focus:", une_conv_focus()))
+cat(paste("Mood:", une_conv_mood(relationship), "\n"))
+cat(paste("Bearing:", une_conv_bearing(demeanor), "\n"))
+cat(paste("Focus:", une_conv_focus(), "\n"))
 }

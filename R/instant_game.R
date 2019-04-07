@@ -7,7 +7,7 @@ inst_setting <- function(){
          "Depopulated Earth","Desert Planet","Dreamworld","Dungeon","Dying World","Dystopia","Early Space Exploration",
          "Elizabethan England","Fallen Civilization","Farm","Festival","First Alien Contact","Forest",
          "French Revolution","Frontier","Frozen Wasteland","Future Earth","Galactic Empires","Golden Age of Comics",
-         "Grimm’s Fairy Tales","Historical","Industrial Revolution","Institution/Institutionalized",
+         "Grimm Fairy Tales","Historical","Industrial Revolution","Institution/Institutionalized",
          "Isolated Space Probe","Jungle World","Limbo","London","Lost Civilization","Lost/Stranded","Mars",
          "Mechanized Planet","Medieval","Microworld","Military Installation","Modern Day Las Vegas",
          "Modern-Day Amusement Park","Modern-Day Milwaukee","Moon","Mystical Orient","Near Future",

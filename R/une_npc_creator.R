@@ -130,4 +130,9 @@ une_npc_complete <- function(){
        sep = "\n"))
 }
 
-
+une <- function(){
+  cat("NPC:\n\n")
+  une_npc_complete()
+  cat("\n\nConversation:\n\n")
+  une_conv()
+}
