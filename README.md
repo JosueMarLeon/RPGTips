@@ -18,11 +18,12 @@ How to install
 As this is not on CRAN and it won´t be for a lot of time, you best bet is to use "install_github"
 function from the "devtools" package:
 
-# install devtools
+-   install devtools
 `install.packages("devtools")`
 
-# load RPGtips
+-   load RPGtips
 `library(devtools)`
+
 `install_github("rpg-tips/RPGTips")`
 
 How to use it
