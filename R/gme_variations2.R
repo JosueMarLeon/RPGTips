@@ -75,9 +75,7 @@ gme_description_table <- function(){
              "Ferociously","Fiercely","Foolishly","Fortunately","Frantically","Freely","Frighteningly","Kookily",
              "Lazily","Lightly","Loosely","Loudly","Lovingly","Loyally","Majestically","Meaningfully","Mechanically",
              "Miserably","Mockingly","Mysteriously","Naturally","Neatly","Nicely","Oddly","Offensively","Officially",
-             "Partially", "Peacefully", "Perfectly", "Playfully", "Politely", "Positively", "Powerfully", "Quaintly",
-             "Quarrelsomely" , "Quietly", "Roughly", "Rudely", "Ruthlessly", "Slowly", "Softly", "Swiftly", 
-             "Threateningly", "Very", "Violently", "Wildly", "Yieldingly")
+             "Partially")
   word2 <- c("Abandoned","Abnormal","Amusing","Ancient","Aromatic","Average","Beautiful","Bizarre","Classy","Clean",
              "Cold","Colorful","Creepy","Cute","Damaged","Dark","Defeated","Delicate","Delightful","Dirty",
              "Graceful","Hard","Harsh","Healthy","Heavy","Historical","Horrible","Important","Interesting",
