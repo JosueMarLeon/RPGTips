@@ -1,5 +1,5 @@
 # Mythic GME Adventure Crafter Plot Points
-
+#' @export
 gme_plot_point <- function(theme = sample(c("tension", "mystery", "personal", "action", "social"), 1)){
   roll <- sample(1:100, 1)
   if(roll >95){
@@ -9,7 +9,7 @@ gme_plot_point <- function(theme = sample(c("tension", "mystery", "personal", "a
     return(as.character(plot_points$df[[theme]][roll]))
   }
 }
-
+#' @export
 gme_turning_point <- function(themes = c("tension", "mystery", "personal", "action", "social")){
   result <- data.frame(matrix(data = NA, nrow = 5, ncol = 2))
   special <- rep(themes[4:5], 4)

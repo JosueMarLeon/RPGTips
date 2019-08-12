@@ -1,3 +1,4 @@
+
 une_npc_modifier <- function(){
     mods <- c("superfluous","inept","pleasant","lethargic","jovial","addicted",
               "banal","insensitive","defiant","shrewd","conformist","logical",
@@ -39,9 +40,10 @@ une_npc_noun <- function(){
   sample(nouns, 1)
 }
 
+#' @export
 une_npc <- function(){
-  paste(une_npc_modifier(),
-        une_npc_noun())
+  tools::toTitleCase(paste(une_npc_modifier(),
+        une_npc_noun()))
 }
 
 une_npc_motivation_verb <- function(){
@@ -100,11 +102,11 @@ une_npc_motivation_noun <- function(parts = 1:5,
     return(sample(nouns[[part]], 1))
   }
 }
-
+#' @export
 une_npc_motivation <- function(parts = 1:5, complete = FALSE){
   if(!complete){
-    return(paste(une_npc_motivation_verb(),
-          une_npc_motivation_noun(parts)))
+    return(tools::toTitleCase(paste(une_npc_motivation_verb(),
+          une_npc_motivation_noun(parts))))
   }else{
     mot <- une_npc_motivation_noun(parts, complete)
     return(list(paste(une_npc_motivation_verb(),
@@ -113,7 +115,7 @@ une_npc_motivation <- function(parts = 1:5, complete = FALSE){
   }
 
 }
-
+#' @export
 une_npc_complete <- function(){
  result <- paste(une_npc(), "\nMotivations:")
  parts <- 1:5
@@ -123,13 +125,13 @@ une_npc_complete <- function(){
  mots[[2]] <- une_npc_motivation(parts, TRUE)
  parts <- parts[-which(parts == mots[[2]][[2]])]
  mots[[3]] <- une_npc_motivation(parts, TRUE)
- cat(paste(result,
-       mots[[1]][[1]],
-       mots[[2]][[1]],
-       mots[[3]][[1]],
-       sep = "\n"))
+ cat(tools::toTitleCase(paste(result,
+                              mots[[1]][[1]],
+                              mots[[2]][[1]],
+                              mots[[3]][[1]],
+                              sep = "\n")))
 }
-
+#' @export
 une <- function(){
   cat("NPC:\n\n")
   une_npc_complete()

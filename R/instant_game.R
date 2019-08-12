@@ -1,4 +1,4 @@
-## Settings----
+#' @export
 inst_setting <- function(){
   r <- c("Alien Occupied Earth","All Supers World","Alternate History","Ancient Egypt","Ape World",
          "Arabian Nights","Archaic/Biblical","Arkship","Artificial World","Atlantis","Barbarian Europe",
@@ -19,7 +19,7 @@ inst_setting <- function(){
          "Virtual Reality","War","Wild West","Wilderness","Wildlife Preserve","WWI","WWII","WWIII","Your Place")
   return(sample(r,1))
 }
-## Tones ----
+#' @export
 inst_tones <- function(){
   r <- c("Action/Adventure","B-movie","Campy","Conspiracy","Despair","Epic","Fantasy","Gothic",
          "Heroic","Horror","Intrigue","Mystery","Mythic","Parable/Moralistic","Pulp","Realistic",

@@ -1,4 +1,4 @@
-## Game Master´s Apprentice Random Event ----
+#' @export
 rand_gma <- function(){
   r1 <- c("rearrange","trap","replace","degrade","defenestrate","bless","fix","wish","eliminate","inflict",
           "prevent","antagonize","bargain","judge","pardon","convince","meet","return","unearth","take",
@@ -22,7 +22,7 @@ rand_gma <- function(){
   return(paste(sample(r1,1),sample(r2,1),sample(r3,1)))
 }
 
-## City locations ----
+#' @export
 rand_city_location <- function(){
   r <- c("Abbey","Altar","Arch","Catacomb","Cemetery","Church","Coliseum","Crypt","Exorcist",
 "Exposure tower","Fountain","Missionary society","Monastery","Nunnery","Oracle","Parade grounds",
@@ -128,7 +128,7 @@ Aquarium","Arboretum","Artist's studio","Astrologer","Bookseller","Boxing & wres
 return(sample(r,1))
 }
 
-## Covetous Poet NPC Attitude ----
+#' @export
 rand_npc_attitude <- function(){
   r <- c("Alluring","Strong Presence","Aloof","Excitable","Argumentative","Pleasant","Arrogant","Leery",
          "Beautiful","Handsome","Boastful","Knowledgable","Boisterous","Un appable","Boring","Silly","Blunt",
@@ -145,13 +145,12 @@ rand_npc_attitude <- function(){
   return(sample(r,1))
 }
 
-## Simple Oracle ----
+#' @export
 rand_simple_oracle <- function(){
   return(sample(c("Yes, and", "Yes", "Yes, but", "No, but", "No", "No, and"),1))
 }
 
-
-## Magic traditions ----
+#' @export
 rand_magic_tradition <- function(){
  r <- c("Air","Alchemy","Alteration","Arcana","Battle","Blood","Celestial","Chaos","Conjuration","Curse",
         "Death","Demonology","Destruction","Divination","Earth","Enchantment","Exorcism","Fey","Fire",

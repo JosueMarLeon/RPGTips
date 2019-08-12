@@ -1,4 +1,5 @@
 ## My roll function for tables ----
+#' @export
 roll_table <- function(fun){
   f <- fun
   set.seed(seed_counter)
@@ -8,6 +9,7 @@ roll_table <- function(fun){
 }
 
 ## Roll dice ----
+#' @export
 roll <- function(number = 1, dice = 6, type = "normal", bonus = 0){
   if(type =="fate"){
     rolls <- sample(x = c(1,0,-1), size = 4, replace = T)

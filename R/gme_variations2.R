@@ -1,6 +1,6 @@
 # GME Variations 2 Fate Check ----
-
-gme_fate_check <- function(chaosFactor = 5,chaosAdjust = 2,prob = 0){
+#' @export
+gme_fate_check <- function(chaosFactor = 4,chaosAdjust = 2,prob = 0){
   throw1 <- sample(1:10,1)
   throw2 <- sample(1:10,1)
   throw <-  throw1 + throw2 + prob
@@ -23,8 +23,8 @@ gme_fate_check <- function(chaosFactor = 5,chaosAdjust = 2,prob = 0){
 }
 
 # GME Variations 2 Detail Check ----
-
-gme_detail_check <- function(cf = 5, debug = F){
+#' @export
+gme_detail_check <- function(cf = 4, debug = F){
   throw <- sample(1:10,1) + sample(1:10,1)
   if(cf == 3) throw <- throw + 2
   if(cf == 6) throw <- throw - 2
@@ -37,7 +37,7 @@ gme_detail_check <- function(cf = 5, debug = F){
       result <- "Calm"
   }else{
       result <- results[throw-3]
-    } 
+    }
   if(debug){
     return(list(throw, result))
   }else{
@@ -46,8 +46,9 @@ gme_detail_check <- function(cf = 5, debug = F){
 }
 
 # GME Variations 2 Event Check ----
+#' @export
 gme_event_check <- function(){
-  result <- tools::toTitleCase(c(rep("Remote Event", 7),
+  result <- c(rep("Remote Event", 7),
               rep("NPC Action", 21),
               rep("Introduce a new NPC", 7),
               rep("Move towards a thread", 10),
@@ -57,11 +58,12 @@ gme_event_check <- function(){
               rep("PC Positive", 8),
               rep("Ambiguous Event", 8),
               rep("NPC Negative", 9),
-              rep("NPC Positive", 8)))
+              rep("NPC Positive", 8))
   sample(result, 1)
 }
 
 # GME Meaning Tables: Descriptions ----
+#' @export
 gme_description_table <- function(){
   word1 <- c("Abnormally","Adventurously","Aggressively","Angrily","Anxiously","Awkwardly","Beautifully",
              "Bleakly","Boldly","Bravely","Busily","Calmly","Carefully","Carelessly","Cautiously","Ceaselessly",
@@ -90,6 +92,7 @@ gme_description_table <- function(){
 }
 
 # GME Meaning Tables: Actions ----
+#' @export
 gme_actions_table <- function(){
   word1 <- c("Attainment","Starting","Neglect","Fight","Recruit","Triumph","Violate","Oppose","Malice",
              "Communicate","Persecute","Increase","Decrease","Abandon","Gratify","Inquire","Antagonize",

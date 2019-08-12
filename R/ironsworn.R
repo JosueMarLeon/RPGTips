@@ -1,5 +1,4 @@
-## Dice ----
-
+#' @export
 iron_dice <- function(bonus=0){
   a <- sample(1:6, 1) + bonus
   if(a>10) a <- 10
@@ -16,8 +15,7 @@ iron_dice <- function(bonus=0){
   if(b == c) r <- paste(r, "and Match!")
   return(r)
 }
-
-## Challenge Rank ----
+#' @export
 iron_challenge <- function(){
   r <- c(rep("Troublesome (1/5)", 20),
          rep("Dangerous (2/5)", 35),
@@ -26,8 +24,7 @@ iron_challenge <- function(){
          rep("Epic (5/5)", 6))
   return(sample(r,1))
 }
-
-## Plot twists ----
+#' @export
 iron_plot_twist <- function(){
   return(sample(c('It was all a diversion.', 'A dark secret is revealed.', 'A trap is sprung.',
                   'An assumption is revealed to be false.', 'A secret alliance is revealed.',
@@ -41,8 +38,7 @@ iron_plot_twist <- function(){
                   'Unexpected powers or abilities are revealed.',
                   'Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.'),1))
 }
-
-## Combat actions ----
+#' @export
 iron_combat_actions <- function(){
   actions <- c(rep("Compel a surrender", 3),
                rep("Coordinate with allies", 3),
@@ -64,8 +60,7 @@ iron_combat_actions <- function(){
                rep("Take a completely unexpected action", 1))
   sample(actions, 1)
 }
-
-## NPC Disposition ----
+#' @export
 iron_npc_disposition <- function(){
   r <- c(rep("Helpful", 6),
          rep("Friendly", 7),
@@ -81,8 +76,7 @@ iron_npc_disposition <- function(){
          rep("Hostile", 7))
   return(sample(r,1))
 }
-##
-## NPC Goals ----
+#' @export
 iron_npc_goal <- function(){
   r <- c('Obtain an object','Make an agreement','Build a relationship','Undermine a relationship',
          'Seek a truth','Pay a debt','Refute a falsehood','Harm a rival','Cure an ill','Find a person',
@@ -93,8 +87,7 @@ iron_npc_goal <- function(){
          'Escape from something','Resolve a dispute')
   return(sample(r,1))
 }
-
-## NPC Role ----
+#' @export
 iron_npc_role <- function(){
   r <- c(rep("Criminal", 2),
          rep("Healer", 2),
@@ -127,8 +120,7 @@ iron_npc_role <- function(){
          rep("Farmer",5))
   return(sample(r,1))
 }
-
-## Settlement trouble ----
+#' @export
 iron_settlement_trouble <- function(){
   r <- c('Outsiders rejected','Dangerous discovery','Dreadful omens','Natural disaster',
          'Old wounds reopened','Important object is lost','Someone is captured','Mysterious phenomenon',
@@ -142,8 +134,7 @@ iron_settlement_trouble <- function(){
          'In the crossfire','Stranger causes discord','Important event threatened', 'Dangerous tradition')
   return(sample(r,1))
 }
-
-## Locations ----
+#' @export
 iron_locations <- function(){
   r <- c("Hideout",
          "Ruin",

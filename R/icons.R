@@ -1,3 +1,4 @@
+#' @export
 icons_roll <- function(bonus = 0, difficulty = 0){
   result <- sample(1:6, size = 1) + bonus - sample(1:6, size = 1) - difficulty
   if(result <= -5) string <- "Massive Failure (minus three degrees)"
@@ -10,6 +11,7 @@ icons_roll <- function(bonus = 0, difficulty = 0){
   return(paste(result, string, sep = ", "))
 }
 
+#' @export
 icons_slam <- function(damage = 1, strength = 3){
   result <- sample(1:6, size = 1) + damage - sample(1:6, size = 1) - strength
   if(result <= 0) string <- "No Effect"
@@ -18,6 +20,7 @@ icons_slam <- function(damage = 1, strength = 3){
   return(paste(result, string, sep = ", "))
 }
 
+#' @export
 icons_stun <- function(damage = 1, strength = 3){
   result <- sample(1:6, size = 1) + damage - sample(1:6, size = 1) - strength
   if(result <= 0) string <- "No Effect"
@@ -26,6 +29,7 @@ icons_stun <- function(damage = 1, strength = 3){
   return(paste(result, string, sep = ", "))
 }
 
+#' @export
 icons_kill <- function(damage = 1, strength = 3){
   result <- sample(1:6, size = 1) + damage - sample(1:6, size = 1) - strength
   if(result <= 0) string <- "No Effect"
@@ -34,6 +38,7 @@ icons_kill <- function(damage = 1, strength = 3){
   return(paste(result, string, sep = ", "))
 }
 
+#' @export
 icons_create_origin <- function(){
  r <- sum(sample(1:6, size = 2, replace = T))
  if(r <=4) return("Trained")
@@ -44,6 +49,7 @@ icons_create_origin <- function(){
  if(r %in% c(11,12)) return("Unearthly")
 }
 
+#' @export
 icons_level <- function(r = sum(sample(1:6, size = 2, replace = T))){
   if(r == 2) return(1)
   if(r == 3) return(2)
@@ -55,6 +61,7 @@ icons_level <- function(r = sum(sample(1:6, size = 2, replace = T))){
   if(r == 12) return(8)
 }
 
+#' @export
 icons_powers_number <- function(){
  r <- sum(sample(1:6, size = 2, replace = T))
  if(r <= 4) return(2)
@@ -63,6 +70,7 @@ icons_powers_number <- function(){
  return(5)
 }
 
+#' @export
 icons_power_type_table <- function(){
  r <- sum(sample(1:6, size = 2, replace = T))
  if(r <=3) return("Mental")
@@ -74,6 +82,7 @@ icons_power_type_table <- function(){
  return("Sensory")
 }
 
+#' @export
 icons_power_alteration <- function(){
   sample(c("Ability Boost (group)",
            "Ability Increase (group)",
@@ -95,6 +104,7 @@ icons_power_alteration <- function(){
            "Transformation"), size = 1)
 }
 
+#' @export
 icons_power_control <- function(){
   r <- sample(1:18, size = 1)
   if(r <= 2) return("Alteration Ray (group)")
@@ -110,6 +120,7 @@ icons_power_control <- function(){
   if(r <= 18) return("Wizardry (group)")
 }
 
+#' @export
 icons_power_defensive <- function(){
   r <- sample(1:18, size = 1)
   if(r <= 2) return("Absorption")
@@ -122,6 +133,7 @@ icons_power_defensive <- function(){
   if(r <= 18) return("Resistance (group)")
 }
 
+#' @export
 icons_power_mental <- function(){
   r <- sample(1:12, size = 1)
   if(r <= 1) return("Astral Projection")
@@ -134,6 +146,7 @@ icons_power_mental <- function(){
   if(r <= 12) return("Telepathy")
 }
 
+#' @export
 icons_power_movement <- function(){
   r <- sample(1:12, size = 1)
   if(r <= 1) return("Burrowing")
@@ -147,6 +160,7 @@ icons_power_movement <- function(){
   if(r <= 12) return("Wall-Crawling")
 }
 
+#' @export
 icons_power_offensive <- function(){
   r <- sample(1:12, size = 1)
   if(r <= 1) return("Affliction")
@@ -161,6 +175,7 @@ icons_power_offensive <- function(){
   if(r <= 12) return("Stunning")
 }
 
+#' @export
 icons_power_sensory <- function(){
   r <- sample(1:12, size = 1)
   if(r <= 2) return("Danger Sense")
@@ -173,6 +188,7 @@ icons_power_sensory <- function(){
   if(r <= 12) return("Super-Senses (group)")
 }
 
+#' @export
 icons_specialties <- function(){
   r <- sum(sample(1:6, size = 2, replace = T))
   if(r <= 4) return(1)
@@ -181,6 +197,7 @@ icons_specialties <- function(){
   if(r <= 12) return(4)
 }
 
+#' @export
 icons_specialty <- function(){
  r <- sample(1:36, size = 1)
  if(r == 1) return("Aerial Combat")
