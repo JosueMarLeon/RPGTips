@@ -147,7 +147,13 @@ rand_npc_attitude <- function(){
 
 #' @export
 rand_simple_oracle <- function(){
-  return(sample(c("Yes, and", "Yes", "Yes, but", "No, but", "No", "No, and"),1))
+  return(sample(c("Yes, and",
+                  "Yes",
+                  "Yes, but",
+                  "No, but",
+                  "No",
+                  "No, and"),
+                1))
 }
 
 #' @export
