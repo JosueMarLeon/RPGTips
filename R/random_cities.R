@@ -30,7 +30,6 @@ settlement_name <- function(){
   ifelse(option, yes = paste(sample(prefix, 1), res), no = res)
 }
 
-
 #' @export
 city_government <- function(){
 govs_5e <- c("Autocracy","Bureaucracy","Confederacy","Democracy","Dictatorship",
