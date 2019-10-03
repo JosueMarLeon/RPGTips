@@ -31,7 +31,7 @@ settlement_name <- function(){
 }
 
 #' @export
-city_government <- function(){
+settlement_government <- function(){
 govs_5e <- c("Autocracy","Bureaucracy","Confederacy","Democracy","Dictatorship",
              "Feudalism","Gerontocracy","Hierarchy","Magocracy","Matriarchy",
              "Militocracy","Monarchy","Oligarchy","Patriarchy","Meritocracy",

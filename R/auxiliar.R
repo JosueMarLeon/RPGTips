@@ -1,4 +1,3 @@
-## My roll function for tables ----
 #' @export
 roll_table <- function(fun){
   f <- fun
@@ -8,7 +7,6 @@ roll_table <- function(fun){
   return(r)
 }
 
-## Roll dice ----
 #' @export
 roll <- function(number = 1, dice = 6, type = "normal", bonus = 0){
   if(type =="fate"){
@@ -27,5 +25,20 @@ roll <- function(number = 1, dice = 6, type = "normal", bonus = 0){
   }
   if(type == "disadvantage"){
     return(min(rolls)+bonus)
+  }
+}
+
+#' @export
+list_tools <- function(){
+  funs <- ls("package:RPGTips")
+  funs <- funs[!grepl(pattern = "roll", x = funs)]
+  splitted <- strsplit(x = funs, split = "_")
+  prefixes <- character()
+  for(i in 1:length(splitted)){
+    prefixes[i] <- splitted[[i]][1]
+  }
+  for(i in 1:length(unique(prefixes))){
+    cat(unique(prefixes)[i])
+    cat("\n")
   }
 }
