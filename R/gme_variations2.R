@@ -47,19 +47,47 @@ gme_detail_check <- function(cf = 4, debug = F){
 
 # GME Variations 2 Event Check ----
 #' @export
-gme_event_check <- function(){
-  result <- c(rep("Remote Event", 7),
-              rep("NPC Action", 21),
-              rep("Introduce a new NPC", 7),
-              rep("Move towards a thread", 10),
-              rep("Move away from a thread", 7),
-              rep("Close a thread", 3),
-              rep("PC Negative", 12),
-              rep("PC Positive", 8),
-              rep("Ambiguous Event", 8),
-              rep("NPC Negative", 9),
-              rep("NPC Positive", 8))
-  sample(result, 1)
+gme_event_check <- function(theme = "standard"){
+  if(theme == 'standard'){
+    result <- c(rep("Remote Event", 7),
+                rep("NPC Action", 21),
+                rep("Introduce a new NPC", 7),
+                rep("Move towards a thread", 10),
+                rep("Move away from a thread", 7),
+                rep("Close a thread", 3),
+                rep("PC Negative", 12),
+                rep("PC Positive", 8),
+                rep("Ambiguous Event", 8),
+                rep("NPC Negative", 9),
+                rep("NPC Positive", 8))
+  }
+  if(theme == 'horror'){
+    result <- c(rep("Horror - PC", 10),
+                rep("Horror - NPC", 13),
+                rep("Remote event", 7),
+                rep("NPC Action", 19),
+                rep("New NPC", 3),
+                rep("Move toward a thread", 3),
+                rep("Move away from a thread", 7),
+                rep("PC Negative", 10),
+                rep("PC Positive", 3),
+                rep("Ambiguous event", 7),
+                rep("NPC negative", 15),
+                rep("NPC positive", 3))
+  }
+  if(theme == 'mystery'){
+    result <- c(rep("Remote event", 8),
+                rep("NPC Action", 12),
+                rep("New NPC", 12),
+                rep("Move toward a thread", 20),
+                rep("Move away from a thread", 12),
+                rep("PC Negative", 8),
+                rep("PC Positive", 8),
+                rep("Ambiguous event", 8),
+                rep("NPC negative", 8),
+                rep("NPC positive", 4))
+  }
+  return(sample(result, 1))
 }
 
 # GME Meaning Tables: Descriptions ----
