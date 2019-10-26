@@ -3,6 +3,7 @@
 export(dmg_world_shaking_event)
 export(gma_base_prompt)
 export(gme_actions_table)
+export(gme_actions_table2)
 export(gme_description_table)
 export(gme_detail_check)
 export(gme_event_check)

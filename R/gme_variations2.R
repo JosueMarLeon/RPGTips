@@ -118,3 +118,43 @@ gme_actions_table <- function(){
              "Trials","Masses","Vehicle","Art")
   return(paste(sample(word1,1),sample(word2,1)))
 }
+
+# GME Meaning Tables: Actions Variation ----
+#' @export
+gme_actions_table2 <- function(){
+  word1 <- c("Attainment","Starting","Neglect","Fight","Recruit","Triumph","Violate","Oppose","Malice",
+             "Communicate","Persecute","Increase","Decrease","Abandon","Gratify","Inquire","Antagonize",
+             "Move","Waste","Truce","Expose","Haggle","Imprison","Release","Celebrate","Develop","Travel",
+             "Block","Harm","Debase","Overindulge","Adjourn","Adversity","Kill","Disrupt","Usurp","Create",
+             "Betray","Agree","Abuse","Excitement","Activity","Assist","Care","Negligence","Passion","Work",
+             "Control","Attract","Failure","Pursue","Vengeance","Proceedings","Dispute","Punish","Guide",
+             "Transform","Overthrow","Oppress","Change","Release","Befriend","Judge","Desert","Dominate",
+             "Procrastinate","Praise","Separate","Take","Break","Heal","Delay","Stop","Lie","Return","Imitate",
+             "Struggle","Inform","Bestow","Postpone","Oppress","Inspect","Ambush","Spy","Attach","Carry","Open",
+             "Carelessness","Ruin","Extravagance","Trick","Arrive","Propose","Divide","Refuse","Mistrust",
+             "Deceive","Cruelty","Intolerance","Trust")
+  word2 <- c("Abandoned","Abnormal","Amusing","Ancient","Aromatic","Average","Beautiful","Bizarre","Classy","Clean",
+             "Cold","Colorful","Creepy","Cute","Damaged","Dark","Defeated","Delicate","Delightful","Dirty",
+             "Graceful","Hard","Harsh","Healthy","Heavy","Historical","Horrible","Important","Interesting",
+             "Juvenile","Lacking","Lame","Large","Lavish","Lean","Less","Lethal","Lonely","Lovely","Macabre",
+             "Remarkable","Rotten","Rough","Ruined","Rustic","Scary","Simple","Small","Smelly","Smooth","Soft",
+             "Strong","Tranquil","Ugly","Valuable","Warlike","Warm","Watery","Weak","Young","Disagreeable",
+             "Disgusting","Drab","Dry","Dull","Empty","Enormous","Exotic","Faded","Familiar","Fancy","Fat",
+             "Feeble","Feminine","Festive","Flawless","Fresh","Full","Glorious","Good","Magnificent","Masculine",
+             "Mature","Messy","Mighty","Military","Modern","Extravagant","Mundane","Mysterious","Natural",
+             "Nondescript","Odd","Pale","Petite","Poor","Powerful","Quaint","Rare","Reassuring")
+  word3 <- c("Goals","Dreams","Environment","Outside","Inside","Reality","Allies","Enemies","Evil","Good",
+             "Emotions","Opposition","War","Peace","Innocent","Love","Spirit","Intellect","Ideas","Joy",
+             "Advice","Plot","Competition","Prison","Illness","Food","Attention","Success","Failure","Travel",
+             "Jealousy","Dispute","Home","Investment","Suffering","Wishes","Tactics","Stalemate","Randomness",
+             "Misfortune","Victory","Dispute","Riches","Normal","Technology","Hope","Magic","Illusions","Portals",
+             "Danger","Weapons","Animals","Weather","Elements","Nature","Masses","Leadership","Fame","Anger",
+             "Information","Messages","Energy","Balance","Tension","Friendship","Physical","Project","Pleasures",
+             "Pain","Possessions","Benefits","Plans","Lies","Expectations","Legal","Bureaucracy","Business",
+             "Path","News","Exterior","Death","Disruption","Power","Burden","Intrigues","Fears","Ambush","Rumor",
+             "Wounds","Extravagance","Representative","Adversities","Opulence","Liberty","Military","Mundane",
+             "Trials","Masses","Vehicle","Art")
+  return(paste(sample(word1,1),
+               sample(word2,1),
+               sample(word3,1)))
+}
