@@ -3,6 +3,7 @@ source("data-raw/gma_base_prompts.R")
 source("data-raw/backgrounds5e.R")
 source("data-raw/backgroundsp2e.R")
 source("data-raw/wyrd_wild_files.R")
+source("data-raw/settlement_names.R")
 usethis::use_data(plot_points,
                   gma_base_adjectives,
                   gma_base_names,
@@ -18,5 +19,7 @@ usethis::use_data(plot_points,
                   wyrd_wilderness_scenes_l,
                   wyrd_woods_types_l,
                   wyrd_monster_l,
+                  settlement_names_main,
+                  settlement_names_suffix,
                   internal = T,
                   overwrite = T)

@@ -72,15 +72,15 @@ perilous_natural_feature <- function(){
                                      rep("Sea/Ocean",2)),1)))
   # Landmark ----
   if(res < 12) return(paste("Landmark:",
-                            sample(c(rep("Water-based (waterfall, geyser)",3),
-                                     rep("Plant-based (ancient trees, giant flowers)",3),
-                                     rep("Earth-based (peak, formation, crater)", 4),
+                            sample(c(rep("Water-based (waterfall / geyser)",3),
+                                     rep("Plant-based (ancient trees / giant flowers)",3),
+                                     rep("Earth-based (peak / formation / crater)", 4),
                                      rep(perilous_oddity(), 2)), 1)))
   # Resource ----
   tab <- c(rep("Game/Fruit/Vegetable", 4),
            rep("Herb/Spice/Dye source", 2),
            rep("Timber/Stone", 3),
-           rep("Ore (copper, iron,...)", 2),
+           rep("Ore (copper/ iron /...)", 2),
            "Precious metal/gems")
   return(paste0("Resource: ",
                 sample(tab,1),
@@ -140,47 +140,53 @@ perilous_structure <- function(){
              perilous_oddity())
     return(paste0("Enigmatic: ",
                   sample(tab,1), ", ",
-                  perilous_age(roll(1,8)+4), ", ",
-                  perilous_size(roll(1,8)+4), ", ",
+                  perilous_age(sample(1:8,1)+4), ", ",
+                  perilous_size(sample(1:8,1)+4), ", ",
                   perilous_visibility()))
   }
   # Infrastructure ----
   if(res < 4){
-    tab <- c(rep("Track/Path", 4),
-             rep("Road", 4),
-             rep("Bridge/Ford",2),
-             "Mine/Quarry",
-             "Aqueduct/Canal/Portal")
-    return(paste0("Infrastructure: ",
-                 sample(tab,1),
-                 ". Who did it?"))
+    return(perilous_structure_infrastructure())
   }
   # Dwelling ----
   if(res == 4){
-    tab <- c(rep("Campsite", 3),
-             rep("Hovel/Hut", 3),
-             rep("Farm", 2),
-             rep("Inn/Roadhouse",2),
-             rep("Tower/Keep/Estate",2))
-    return(paste0("Dwelling: ", sample(tab,1),
-                  ". Who lives in it?"))
+    return(perilous_structure_dwelling())
   }
   # Burial / Religious ----
-
+  if(res < 7){
+    return(perilous_structure_burial())
+  }
+  # Steading ----
+  if(res < 9){
+    return(perilous_steading())
+  }
+  # Ruin ----
+  tab <- c(rep(perilous_structure_infrastructure(sample(1:6,1)+6), 2),
+           rep(perilous_structure_dwelling(sample(1:8,1)+4),2),
+           rep(perilous_structure_burial(sample(1:8,1)+4),2),
+           rep(perilous_steading(sample(1:10,1)+2), 2),
+           rep('Dungeon!', 3))
+  return(paste0('Ruin: ',
+                sample(tab, 1),
+                ', ', perilous_age(),
+                ', ', perilous_ruination(),
+                ', ', perilous_visibility()))
 }
 
 # Aux tables
 
 perilous_alignment <- function(){
-  sample(c(rep("Chaotic", 2),
+  paste('Alignment:',
+        sample(c(rep("Chaotic", 2),
            rep("Evil", 2),
            rep("Neutral", 3),
            rep("Good", 2),
-           rep("Lawful", 2)), 1)
+           rep("Lawful", 2)), 1))
 }
 
 perilous_element <- function(){
-  sample(c("Air", "Earth", "Fire", "Water", "Life", "Death"), 1)
+  paste('Element:',
+        sample(c("Air", "Earth", "Fire", "Water", "Life", "Death"), 1))
 }
 
 perilous_aspect <- function(){
@@ -196,15 +202,17 @@ perilous_aspect <- function(){
            "Hate/Envy",
            "Love/Admiration",
            perilous_element())
-  sample(res, replace = F, size = 1 + double)
+  paste('Aspect:',paste(sample(res, replace = F, size = 1 + double),
+        collapse = ' and '))
 }
 
 perilous_visibility <- function(){
-  sample(c(rep("Buried/Camouflaged/Nigh invisible",2),
+  paste('Visibility:',
+        sample(c(rep("Buried/Camouflaged/Nigh invisible",2),
            rep("Partly covered/Overgrown/Hidden", 4),
            rep("Obvious/In plain sight",3),
            rep("Visible at near distance",2),
-           "Visible at great distance/Focal point"),1)
+           "Visible at great distance/Focal point"),1))
 }
 
 perilous_oddity <- function(){
@@ -220,17 +228,29 @@ perilous_oddity <- function(){
            "magnetic/repellant",
            "devoid of life",
            "unexpectedly alive")
-  sample(res, size = 1 + double)
+  paste('Oddity', paste(sample(res, size = 1 + double), collapse = ' and '))
 }
 
 perilous_terrain <- function(){
-  sample(c("Wasteland/Desert",
+  paste('Terrain:',sample(c("Wasteland/Desert",
            rep("Flatland/Plain", 2),
            "Wetland/Marsh/Swamp",
            rep("Woodland/Forest/Jungle",3),
            rep("Highlands/Hills",2),
            rep("Mountains",2),
-           perilous_oddity()),1)
+           perilous_oddity()),1))
+}
+
+perilous_ruination <- function(){
+  tab <- c('Arcane disaster',
+           'Damnation/Curse',
+           rep('Earthquake/Fire/Flood',2),
+           rep('Plague/Famine/Drought',2),
+           rep('Overrun by monsters',2),
+           rep('War/Invasion',2),
+           'Depleted resources',
+           'Better prospects elsewhere')
+  paste('Ruination:',sample(tab,1))
 }
 
 perilous_size <- function(dice = sample(1:12,1)){
@@ -239,7 +259,7 @@ perilous_size <- function(dice = sample(1:12,1)){
            rep("Medium-sized", 6),
            rep("Large", 2),
            "Huge")
-  tab[dice]
+  paste('Size:',tab[dice])
 }
 
 perilous_age <- function(dice = sample(1:12, 1)){
@@ -249,5 +269,37 @@ perilous_age <- function(dice = sample(1:12, 1)){
            rep("Old", 2),
            rep("Ancient", 2),
            "Pre-historic")
-  tab[dice]
+  paste('Age:',tab[dice])
+}
+
+perilous_structure_infrastructure <- function(dice = sample(1:12,1)){
+  tab <- c(rep("Track/Path", 4),
+           rep("Road", 4),
+           rep("Bridge/Ford",2),
+           "Mine/Quarry",
+           "Aqueduct/Canal/Portal")
+  return(paste0("Infrastructure: ",
+                tab[dice]))
+}
+
+perilous_structure_dwelling <- function(dice = sample(1:12,1)){
+  tab <- c(rep("Campsite", 3),
+           rep("Hovel/Hut", 3),
+           rep("Farm", 2),
+           rep("Inn/Roadhouse",2),
+           rep("Tower/Keep/Estate",2))
+  return(paste0("Dwelling: ", tab[dice]))
+}
+
+perilous_structure_burial <- function(dice = sample(1:12,1)){
+  tab <- c(rep("Grave marker/Barrow",2),
+           rep("Graveyard/Necropolis", 2),
+           rep("Tomb/Crypt", 2),
+           rep("Shrine",3),
+           rep("Temple/Retreat",2),
+           "Great Temple")
+  return(paste0("Burial/Religious: ",
+                tab[dice],
+                ", ", perilous_alignment(),
+                ", ", perilous_aspect()))
 }

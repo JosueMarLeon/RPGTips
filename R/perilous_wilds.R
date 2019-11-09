@@ -339,15 +339,24 @@ Wizard"
 #' @export
 perilous_discovery <- function(){
   res <- sample(1:12, 1)
-  if(res == 1) paste("Unnatural Feature,",
+  if(res == 1) disc <- paste("Unnatural Feature,",
                      perilous_unnatural_feature())
-  if(res < 5) paste("Natural Feature,",
+  if(res >= 2 & res <= 4) disc <- paste("Natural Feature,",
                     perilous_natural_feature())
-  if(res < 7) paste("Evidence,",
+  if(res == 5 | res == 6) disc <- paste("Evidence,",
                     perilous_evidence())
-  if(res < 9) paste("Creature")
+  if(res == 7 | res == 8) disc <- paste("Creature")
                     #perilous_creature())
-  if(res > 8) paste("Structure,",
+  if(res > 8) disc <- paste("Structure,",
                     perilous_structure())
+  cat(gsub(pattern = ', ', replacement = '\n', x = disc))
 }
 
+#' @export
+perilous_steading <- function(dice = sample(1:12, 1)){
+  tab <- c(rep('Village', 5),
+           rep('Town', 3),
+           rep('Keep', 3),
+           'City')
+  paste('Steading:', tab[dice])
+}
