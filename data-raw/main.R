@@ -4,6 +4,7 @@ source("data-raw/backgrounds5e.R")
 source("data-raw/backgroundsp2e.R")
 source("data-raw/wyrd_wild_files.R")
 source("data-raw/settlement_names.R")
+source('data-raw/monsters.R')
 usethis::use_data(plot_points,
                   gma_base_adjectives,
                   gma_base_names,
@@ -21,5 +22,7 @@ usethis::use_data(plot_points,
                   wyrd_monster_l,
                   settlement_names_main,
                   settlement_names_suffix,
+                  monsters_osr,
+                  monsters_path,
                   internal = T,
                   overwrite = T)

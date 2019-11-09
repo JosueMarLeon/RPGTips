@@ -77,15 +77,15 @@ Investigator has done something bad, and someone knows. They threaten to blackma
 handbook_location <- function(){
   # Wall of text ----
   raw <- "City
-  Jungle
-  Mountains
-  Sea
-  Forest
-  Desert
-  Polar Region
-  Swamp
-  Farmland / Rural
-  Excluded Zone"
+Jungle
+Mountains
+Sea
+Forest
+Desert
+Polar Region
+Swamp
+Farmland / Rural
+Excluded Zone"
   # Processing ----
   raw <- strsplit(x = raw, split = '\n')[[1]]
   sample(raw, 1)
@@ -95,25 +95,25 @@ handbook_location <- function(){
 handbook_location_urban <- function(){
   # Wall of text ----
   raw <- "Library
-  Mansion
-  Police Station
-  Asylum
-  Abandoned building
-  Weapons dealer
-  Municipal Park
-  Hotel
-  Museum
-  Gentleman's Club
-  Townhouse
-  Bank
-  Shop/Store
-  Significant monument
-  Uknown building
-  Art Gallery
-  Hospital
-  Morgue
-  Train Station
-  University"
+Mansion
+Police Station
+Asylum
+Abandoned building
+Weapons dealer
+Municipal Park
+Hotel
+Museum
+Gentleman's Club
+Townhouse
+Bank
+Shop/Store
+Significant monument
+Uknown building
+Art Gallery
+Hospital
+Morgue
+Train Station
+University"
   # Processing ----
   raw <- strsplit(x = raw, split = '\n')[[1]]
   sample(raw, 1)
