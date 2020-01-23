@@ -29,7 +29,7 @@ roll <- function(number = 1, dice = 6, type = "normal", bonus = 0){
 }
 
 #' @export
-list_tools <- function(){
+cat_tools <- function(){
   funs <- ls("package:RPGTips")
   funs <- funs[!grepl(pattern = "roll", x = funs)]
   splitted <- strsplit(x = funs, split = "_")
@@ -41,4 +41,38 @@ list_tools <- function(){
     cat(unique(prefixes)[i])
     cat("\n")
   }
+}
+
+#' @export
+list_tools <- function(named = F){
+  funs <- ls("package:RPGTips")
+  funs <- funs[!grepl(pattern = "roll", x = funs)]
+  funs <- funs[!grepl(pattern = "list", x = funs)]
+  funs <- funs[!grepl(pattern = "cat", x = funs)]
+  splitted <- strsplit(x = funs, split = "_")
+  prefixes <- character()
+  for(i in 1:length(splitted)){
+    prefixes[i] <- splitted[[i]][1]
+  }
+  if(named){
+    res <- unique(prefixes)
+    names(res) <- c('Dungeon Master\'s Guide, 5e',
+                    'Game Master\'s Apprentice',
+                    'Mythic Game Master Emulator',
+                    'Solo Investigator Handbook',
+                    'Icons',
+                    'Instant Game',
+                    'Ironsworn',
+                    'Monster-related',
+                    'PC-related',
+                    'Perilous Wilds',
+                    'Miscellaneous',
+                    'Settlement-related',
+                    'Solo Adventurer Toolbox',
+                    'Universal NPC Emulator',
+                    'Into the Wyrd and Wild')
+    return(res)
+  }else{
+      return(unique(prefixes))
+    }
 }
