@@ -1,8 +1,8 @@
 #' @export
-roll_table <- function(fun){
+roll_table <- function(fun, ...){
   f <- fun
   set.seed(seed_counter)
-  r <- f()
+  r <- f(...)
   seed_counter <<- seed_counter + 1
   return(r)
 }
