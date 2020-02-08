@@ -1,3 +1,5 @@
+#' UNE Conversation Mood
+#'
 #' Generate conversation mood from an NPC using the Universal NPC Emulator.
 #'
 #' @param relationship The relationship between the PC and the NPC. One of "loved", "friendly", "peaceful", "neutral" (default), "distrustful", "hostile", "hated".
@@ -17,6 +19,8 @@ une_conv_mood <- function(relationship = "neutral"){
   return(moods[which(df[,col]  >= roll)[1]])
 }
 
+#' UNE Conversation Bearing
+#'
 #' Generate the bearing in the conversation of an NPC using the Universal NPC Emulator.
 #'
 #' @param demeanor One of "scheming", "insane", "friendly", "hostile", "inquisitive", "mysterious", "prejudiced" or a number between 1 and 8.
@@ -71,6 +75,8 @@ une_conv_bearing <- function(demeanor = sample(1:8, 1)){
   }
 }
 
+#' UNE Conversation Focus
+#'
 #' Generate the focus of the conversation of an NPC using the Universal NPC Emulator.
 #'
 #' @return A random word with the focus.
@@ -86,6 +92,8 @@ une_conv_focus <- function(){
   sample(focus, 1)
 }
 
+#' UNE Conversation
+#'
 #' Generate the complete conversation of an NPC using the Universal NPC Emulator.
 #'
 #' @param relationship The relationship between the PC and the NPC. One of "loved", "friendly", "peaceful", "neutral" (default), "distrustful", "hostile", "hated".

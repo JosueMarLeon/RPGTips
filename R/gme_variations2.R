@@ -1,6 +1,24 @@
 # GME Variations 2 Fate Check ----
+
+#' Mythic Variations 2 Fate Check
+#'
+#' Use it to generate yes / no answers, with
+#' the possibility of generating exceptional results and random events.
+#' Please consult Mythic Variations II to understand exactly how these results
+#'  are generated.
+#'
+#' @param chaosFactor A number between 3 and 6. Defaults to 4. Higher values
+#' correspond to situations in which your characters are disfavoured and
+#' viceversa. Use \code{chaosAdjust} to control it if your Chaos Factor is 3 or 6.
+#' @param chaosAdjust A number, one of -2 or +2, modifying the likelihood of a
+#' yes in a positive (CF 3) or negative (CF 6) way for the character/s.
+#' @param prob A number: 0 (50/50 or unsure), +2/-2 (likely / unlikely),
+#'  +4/-4 (very likely / very unlikely), +6/-6 (sure thing / no way) or
+#'   +8/-8 (has to be / impossible).
 #' @export
-gme_fate_check <- function(chaosFactor = 4,chaosAdjust = 2,prob = 0){
+gme_fate_check <- function(chaosFactor = 4,
+                           chaosAdjust = 2,
+                           prob = 0){
   throw1 <- sample(1:10,1)
   throw2 <- sample(1:10,1)
   throw <-  throw1 + throw2 + prob
@@ -23,8 +41,21 @@ gme_fate_check <- function(chaosFactor = 4,chaosAdjust = 2,prob = 0){
 }
 
 # GME Variations 2 Detail Check ----
+
+#' Mythic Variations 2 Detail Check
+#'
+#' Use it to answer questions that need more
+#' detail than just a yes or no, such as "How does the tavern look?" or
+#' "What does the cache contain?".
+#'
+#' @param cf A number between 3 and 6. Defaults to 4. Mythic Chaos Factor.
+#' Higher values correspond to situations in which your characters are
+#' disfavoured and viceversa.
+#' @param debug A logical. If \code{TRUE}, the output is a list with the die roll
+#' result included. If \code{FALSE}, only the result is shown. Defaults to \code{FALSE}.
 #' @export
-gme_detail_check <- function(cf = 4, debug = F){
+gme_detail_check <- function(cf = 4,
+                             debug = F){
   throw <- sample(1:10,1) + sample(1:10,1)
   if(cf == 3) throw <- throw + 2
   if(cf == 6) throw <- throw - 2
@@ -46,7 +77,16 @@ gme_detail_check <- function(cf = 4, debug = F){
 }
 
 # GME Variations 2 Event Check ----
+
+#' Mythic Event Check
+#'
+#' Including themes from Variations I. Use it when
+#' the \code{\link{Fate Check}} generates a Random Event, when your scene is
+#' Interrupted or whenever you want to throw some randomness.
+#'
+#' @param theme A character. One of "standard" (default), "horror" or "mystery".
 #' @export
+#' @seealso \code{\link{gme_plot_point()}} and \code{\link{gme_turning_point()}}
 gme_event_check <- function(theme = "standard"){
   if(theme == 'standard'){
     result <- c(rep("Remote Event", 7),
@@ -91,7 +131,15 @@ gme_event_check <- function(theme = "standard"){
 }
 
 # GME Meaning Tables: Descriptions ----
+
+#' Mythic Meaning Tables: Descriptions
+#'
+#' Use it to generate two word descriptions, such as Kindly Delightful or
+#' Delightfully Bizarre.
 #' @export
+#' @seealso \code{\link{gme_actions_table}},
+#' \code{\link{gme_actions_table2}} and
+#' \code{\link{rand_gma}}
 gme_description_table <- function(){
   word1 <- c("Abnormally","Adventurously","Aggressively","Angrily","Anxiously","Awkwardly","Beautifully",
              "Bleakly","Boldly","Bravely","Busily","Calmly","Carefully","Carelessly","Cautiously","Ceaselessly",
@@ -120,7 +168,14 @@ gme_description_table <- function(){
 }
 
 # GME Meaning Tables: Actions ----
+
+#' Mythic Meaning Tables: Actions
+#'
+#' Use it to generate two word actions, such as Agree Magic or Fight Adversities.
 #' @export
+#' @seealso \code{\link{gme_descriptions_table}},
+#' \code{\link{gme_actions_table2}} and
+#' \code{\link{rand_gma}}
 gme_actions_table <- function(){
   word1 <- c("Attainment","Starting","Neglect","Fight","Recruit","Triumph","Violate","Oppose","Malice",
              "Communicate","Persecute","Increase","Decrease","Abandon","Gratify","Inquire","Antagonize",
@@ -148,6 +203,17 @@ gme_actions_table <- function(){
 }
 
 # GME Meaning Tables: Actions Variation ----
+
+#' Mythic Meaning Tables: Extended Actions
+#'
+#' A homebrewed modification of the original \link[=gme_actions_table]{Actions Table}
+#'adding the first word from the \link[=gme_descriptions_table]{Descriptions Table}
+#'in the middle, to generate results such as Persecute Damaged Fears and
+#' Abuse Graceful Bureaucracy.
+#' @export
+#' @seealso \code{\link{gme_descriptions_table}},
+#' \code{\link{gme_actions_table2}} and
+#' \code{\link{rand_gma}}
 #' @export
 gme_actions_table2 <- function(){
   word1 <- c("Attainment","Starting","Neglect","Fight","Recruit","Triumph","Violate","Oppose","Malice",
