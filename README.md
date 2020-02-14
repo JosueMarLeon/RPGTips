@@ -6,11 +6,26 @@ This package is a compilation of functions in R to make RStudio the optimal RPGi
 Included games
 ==============
 
-Right now, there are only functions for:
+These are the products included, as well as the prefix of the functions that call their tables.
 
--   Mythic Variations 2.
--   The Adventure Crafter.
--   (some) Ironsworn random tables.
+-   [Mythic Variations 2](https://www.wordmillgames.com/mythic-variations-2.html): `gme`.
+-   [The Adventure Crafter](https://www.wordmillgames.com/the-adventure-crafter.html): `gme`.
+-   [The Universal NPC Emulator](https://www.drivethrurpg.com/product/134163/UNE-The-Universal-NPC-Emulator-rev): `une`.
+-   [Game Master's Apprentice](https://www.drivethrucards.com/product/125685/The-GameMasters-Apprentice-Base-Deck): `gma`.
+-   [Ironsworn](https://www.ironswornrpg.com/): `iron`.
+-   [Icons Superpowered Roleplaying](https://www.drivethrurpg.com/product/131765/ICONS-Superpowered-Roleplaying-The-Assembled-Edition): `ìcons`.
+-   [Instant Game](https://rpggeek.com/rpg/3837/instant-game): `inst`.
+-   D&D 5e Dungeon Master's Guide: `dmg`.
+-   [Into the Wyrd and Wild](https://www.drivethrurpg.com/product/274922/Into-the-Wyrd-and-Wild): `wyrd`.
+-   [The Perilous Wilds](https://www.drivethrurpg.com/product/156979/The-Perilous-Wilds): `perilous`.
+-   [Solo Adventurer's Toolbox](https://www.dmsguild.com/product/252355/The-Solo-Adventurers-Toolbox): `toolbox`.
+-   [Solo Investigator's Handbook](https://www.dmsguild.com/product/252355/The-Solo-Adventurers-Toolbox): `handbook`.
+- [Random Terrain and Encounter Generator](https://www.drivethrurpg.com/product/250641/Random-Terrain-and-Encounter-Generator): `bloch`.
+
+Some additional goodies:
+- PC Options: backgrounds extracted from 5e and PF 2e: `pc_background`.
+- Random monster generators: `monster_osr` for OSR D&D monsters and `monster_path` for monsters from Pathfinder 1e.
+- Settlements stuff: `settlement`, to create size, name and government type of a place. 
 
 How to install
 ==============
