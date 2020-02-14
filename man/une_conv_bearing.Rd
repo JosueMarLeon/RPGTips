@@ -2,7 +2,7 @@
 % Please edit documentation in R/une_conv.R
 \name{une_conv_bearing}
 \alias{une_conv_bearing}
-\title{Generate the bearing in the conversation of an NPC using the Universal NPC Emulator.}
+\title{UNE Conversation Bearing}
 \usage{
 une_conv_bearing(demeanor = sample(1:8, 1))
 }

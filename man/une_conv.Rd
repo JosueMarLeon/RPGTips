@@ -2,7 +2,7 @@
 % Please edit documentation in R/une_conv.R
 \name{une_conv}
 \alias{une_conv}
-\title{Generate the complete conversation of an NPC using the Universal NPC Emulator.}
+\title{UNE Conversation}
 \usage{
 une_conv(relationship = "neutral", demeanor = sample(1:8, 1))
 }

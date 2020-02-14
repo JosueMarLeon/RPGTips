@@ -2,7 +2,7 @@
 % Please edit documentation in R/une_conv.R
 \name{une_conv_mood}
 \alias{une_conv_mood}
-\title{Generate conversation mood from an NPC using the Universal NPC Emulator.}
+\title{UNE Conversation Mood}
 \usage{
 une_conv_mood(relationship = "neutral")
 }

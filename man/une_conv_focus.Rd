@@ -2,7 +2,7 @@
 % Please edit documentation in R/une_conv.R
 \name{une_conv_focus}
 \alias{une_conv_focus}
-\title{Generate the focus of the conversation of an NPC using the Universal NPC Emulator.}
+\title{UNE Conversation Focus}
 \usage{
 une_conv_focus()
 }
