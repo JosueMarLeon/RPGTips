@@ -12,7 +12,7 @@ These are the products included, as well as the prefix of the functions that cal
 -   [The Adventure Crafter](https://www.wordmillgames.com/the-adventure-crafter.html): `gme`.
 -   [The Universal NPC Emulator](https://www.drivethrurpg.com/product/134163/UNE-The-Universal-NPC-Emulator-rev): `une`.
 -   [Game Master's Apprentice](https://www.drivethrucards.com/product/125685/The-GameMasters-Apprentice-Base-Deck): `gma`.
--   [Ironsworn](https://www.ironswornrpg.com/): `iron`.
+-   [Ironsworn (with some tables from Delve too!)](https://www.ironswornrpg.com/): `iron`.
 -   [Icons Superpowered Roleplaying](https://www.drivethrurpg.com/product/131765/ICONS-Superpowered-Roleplaying-The-Assembled-Edition): `ìcons`.
 -   [Instant Game](https://rpggeek.com/rpg/3837/instant-game): `inst`.
 -   D&D 5e Dungeon Master's Guide: `dmg`.

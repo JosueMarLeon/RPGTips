@@ -1,3 +1,12 @@
+# Die roll ----
+
+#' Ironsworn Dice Roll
+#'
+#' Rolls 1d6 and compares it against 2d10.
+#'
+#' @param bonus A number to sum to the 1d6.
+#'
+#' @return Strong hit, weak hit or miss.
 #' @export
 iron_dice <- function(bonus=0){
   a <- sample(1:6, 1) + bonus
@@ -15,6 +24,7 @@ iron_dice <- function(bonus=0){
   if(b == c) r <- paste(r, "and Match!")
   return(r)
 }
+
 #' @export
 iron_challenge <- function(){
   r <- c(rep("Troublesome (1/5)", 20),
