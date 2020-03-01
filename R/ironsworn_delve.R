@@ -41,8 +41,8 @@ iron_combat_target <- function(){
 
 #' @export
 iron_combat <- function(){
-  paste(iron_combat_method,
-        iron_combat_target)
+  paste(iron_combat_method(),
+        iron_combat_target())
 }
 
 # Trap ----
