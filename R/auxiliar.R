@@ -56,7 +56,8 @@ list_tools <- function(named = F){
   }
   if(named){
     res <- unique(prefixes)
-    names(res) <- c('Dungeon Master\'s Guide, 5e',
+    names(res) <- c('Random Terrain Generator',
+                    'Dungeon Master\'s Guide, 5e',
                     'Game Master\'s Apprentice',
                     'Mythic Game Master Emulator',
                     'Solo Investigator Handbook',

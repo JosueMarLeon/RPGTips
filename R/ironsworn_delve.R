@@ -14,7 +14,7 @@ iron_feature_focus <- function(){
 
 #' @export
 iron_feature <- function(){
-  paste(delve_feature_aspect, delve_feature_focus)
+  paste(iron_feature_aspect(), iron_feature_focus())
 }
 
 # NPC ----
