@@ -27,9 +27,11 @@ gme_fate_check <- function(chaosFactor = 4,
   }
   answer <- ifelse(test = throw >= 11, yes = "Yes", no = "No")
   chaosDice <- sample(1:10,1)
-  if(chaosDice <= chaosFactor & throw1 == throw2){
-    answer <- paste("Random Event and Exceptional", answer)
-  }else{
+  if(chaosDice <= chaosFactor){
+    if(throw1 == throw2){
+      answer <- paste("Random Event and Exceptional", answer)
+      return(answer)
+    }
     if(throw1%%2==0 & throw2%%2==0){
       answer <- paste("Random Event and", answer)
     }
