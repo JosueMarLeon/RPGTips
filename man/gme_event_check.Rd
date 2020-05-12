@@ -7,7 +7,8 @@
 gme_event_check(theme = "standard")
 }
 \arguments{
-\item{theme}{A character. One of "standard" (default), "horror" or "mystery".}
+\item{theme}{A character. One of "standard" (default), "horror", "mystery" or
+"chekhov".}
 }
 \description{
 Including themes from Variations I. Use it when

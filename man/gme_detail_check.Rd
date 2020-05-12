@@ -4,7 +4,7 @@
 \alias{gme_detail_check}
 \title{Mythic Variations 2 Detail Check}
 \usage{
-gme_detail_check(cf = 4, debug = F)
+gme_detail_check(cf = 4, debug = F, themes = F)
 }
 \arguments{
 \item{cf}{A number between 3 and 6. Defaults to 4. Mythic Chaos Factor.
@@ -13,6 +13,9 @@ disfavoured and viceversa.}
 
 \item{debug}{A logical. If \code{TRUE}, the output is a list with the die roll
 result included. If \code{FALSE}, only the result is shown. Defaults to \code{FALSE}.}
+
+\item{themes}{A logical. If \code{TRUE}, results related to NPCs are changed
+to results related to Themes. Defaults to \code{FALSE}.}
 }
 \description{
 Use it to answer questions that need more

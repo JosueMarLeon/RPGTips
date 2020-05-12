@@ -53,15 +53,22 @@ gme_fate_check <- function(chaosFactor = 4,
 #' disfavoured and viceversa.
 #' @param debug A logical. If \code{TRUE}, the output is a list with the die roll
 #' result included. If \code{FALSE}, only the result is shown. Defaults to \code{FALSE}.
+#' @param themes A logical. If \code{TRUE}, results related to NPCs are changed
+#' to results related to Themes. Defaults to \code{FALSE}.
 #' @export
 gme_detail_check <- function(cf = 4,
-                             debug = F){
+                             debug = F,
+                             themes = F){
   throw <- sample(1:10,1) + sample(1:10,1)
   if(cf == 3) throw <- throw + 2
   if(cf == 6) throw <- throw - 2
   results <- c("Anger", "Sadness", "Fear", "Disfavors Thread", "Disfavors PC", "Focus NPC", "Favors NPC",
                "Focus PC", "Disfavors NPC", "Focus Thread", "Favors PC", "Favors Thread", "Courage",
                "Happiness", "Calm")
+  if(themes){
+    results[c(6,7)] <- 'Focus Theme'
+    results[9] <- 'Disfavors Theme'
+  }
   if(throw < 4){
     result <- "Anger"
   }else if(throw > 18){
@@ -84,7 +91,8 @@ gme_detail_check <- function(cf = 4,
 #' the \code{\link{Fate Check}} generates a Random Event, when your scene is
 #' Interrupted or whenever you want to throw some randomness.
 #'
-#' @param theme A character. One of "standard" (default), "horror" or "mystery".
+#' @param theme A character. One of "standard" (default), "horror", "mystery" or
+#' "chekhov".
 #' @export
 #' @seealso \code{\link{gme_plot_point()}} and \code{\link{gme_turning_point()}}
 gme_event_check <- function(theme = "standard"){
@@ -126,6 +134,19 @@ gme_event_check <- function(theme = "standard"){
                 rep("Ambiguous event", 8),
                 rep("NPC negative", 8),
                 rep("NPC positive", 4))
+  }
+  if(theme == 'chekhov'){
+    result <- c(rep("Remote Event", 7),
+                rep("NPC Action", 21),
+                rep("Introduce a new NPC", 7),
+                rep("Move towards a thread", 10),
+                rep("Move away from a thread", 7),
+                rep("Close a thread", 3),
+                rep("PC Negative", 12),
+                rep("PC Positive", 8),
+                rep("Chekhov's gun is shot / Ambiguous event", 8),
+                rep("NPC Negative", 9),
+                rep("NPC Positive", 8))
   }
   return(sample(result, 1))
 }

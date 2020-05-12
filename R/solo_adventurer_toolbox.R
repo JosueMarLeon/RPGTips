@@ -117,7 +117,7 @@ toolbox_rumour <- function(){
                          "In the next village",
                          "In the next large town",
                          "In the capital of the realm",
-                         "In the next realm"))))
+                         "In the next realm"), 1)))
  }
  if(subject == "Creature"){
    return("It's about a creature!")
@@ -129,6 +129,5 @@ toolbox_rumour <- function(){
    return("It's about something!")
  }
 }
-
 
 
