@@ -580,3 +580,8 @@ A Mythos creature appears, terrifying to behold. (Use Q/A rolls to determine the
   raw <- strsplit(x = raw, split = '\n')[[1]]
   sample(raw, 1)
 }
+
+#' @export
+handbook_verb <- function(n = 1){
+  toolbox_verb(n)
+}
