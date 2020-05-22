@@ -1,3 +1,29 @@
+#' @export
+une_power <- function (rlevel = 3){
+
+  power_level <- c("Much Weaker","Slightly Weaker","Comparable","Slightly Stronger","Much Stronger")
+
+  if(rlevel == 1){
+    #print("Order")
+    return(sample(power_level,size = 1, prob = c(2,8,80,8,2)))
+  }
+  if(rlevel == 2){
+    #print("Calm")
+    return(sample(power_level,size = 1, prob = c(4,11,70,11,4)))
+  }
+  if(rlevel == 3){
+    #print("Standard")
+    return(sample(power_level,size = 1, prob = c(5,15,60,15,5)))
+  }
+  if(rlevel == 4){
+    #print("Disarray")
+    return(sample(power_level,size = 1, prob = c(8,17,50,17,8)))
+  }
+  if(rlevel == 5){
+    #print("Chaos")
+    return(sample(power_level,size = 1, prob = c(12,18,40,18,12)))
+  }
+}
 
 une_npc_modifier <- function(){
     mods <- c("superfluous","inept","pleasant","lethargic","jovial","addicted",
@@ -132,9 +158,13 @@ une_npc_complete <- function(){
                               sep = "\n")))
 }
 #' @export
-une <- function(){
+une <- function(power = F, power_r = 3){
   cat("NPC:\n\n")
   une_npc_complete()
   cat("\n\nConversation:\n\n")
   une_conv()
+  if(power){
+    cat("\n\nPower Level:\n\n")
+    une_power(power_r)
+  }
 }
