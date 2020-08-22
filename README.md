@@ -1,3 +1,19 @@
+Notice
+================
+
+This is a mirror of the deleted RPGTips repository by rpg-tips, as it existed on 2020-06-07.
+
+To install, use the following commands:
+
+`install.packages("devtools")`
+
+`library(devtools)`
+
+`install_github("JosueMarLeon/RPGTips")`
+
+The original README is available below.
+
+
 RPG Tips
 ================
 
